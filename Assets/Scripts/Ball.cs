@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D rb;
+    public AudioClip bounceAudioClip;
     //Para almacenar la direccion de la pelota
     private Vector2 direction;
     private Vector2 initialPosition;
@@ -51,6 +52,10 @@ public class Ball : MonoBehaviour
             //Solo hay techo o suelo
             direction.y *= -1;
         }
+
+        AudioManager.instance.PlayAudio(bounceAudioClip, "Boing", 0.3f);
+
+        
 
 
     }
